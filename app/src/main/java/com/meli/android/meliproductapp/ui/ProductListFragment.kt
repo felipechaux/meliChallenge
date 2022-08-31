@@ -20,6 +20,7 @@ import com.meli.android.meliproductapp.presentation.ProductListViewModel
 import com.meli.android.meliproductapp.utils.Constants
 import com.meli.android.meliproductapp.utils.app
 import com.meli.android.meliproductapp.utils.getViewModel
+import com.meli.android.meliproductapp.utils.showLongToast
 
 class ProductListFragment : Fragment() {
 
@@ -77,7 +78,7 @@ class ProductListFragment : Fragment() {
                             binding?.textError?.visibility = View.VISIBLE
                         }
                         is ProductListViewModel.ProductListNavigation.ShowProductListError -> {
-                            binding?.textError?.visibility = View.VISIBLE
+                            context?.showLongToast(R.string.text_error_user.toString())
                         }
                     }
                 }

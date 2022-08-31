@@ -22,10 +22,6 @@ fun Context.showLongToast(message: String) {
     Toast.makeText(this, message, Toast.LENGTH_LONG).show()
 }
 
-fun Context.showLongToast(@StringRes resourceId: Int) {
-    Toast.makeText(this, resourceId, Toast.LENGTH_LONG).show()
-}
-
 fun <T : ViewDataBinding> ViewGroup.bindingInflate(
     @LayoutRes layoutRes: Int,
     attachToRoot: Boolean = true
