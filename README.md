@@ -35,7 +35,7 @@ haciendo uso del endpoint /sites/$SITE_ID/search?q=Motorola%20G6 para obtener í
 
 ### Arquitectura
 
-Este proyecto implementa la arquitectura limpia (Clean Architecture) 
+Este proyecto implementa la arquitectura limpia (Clean Architecture) + MVVM 
 
 #### Capas
 
