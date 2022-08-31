@@ -17,7 +17,7 @@ import org.mockito.junit.MockitoJUnitRunner
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 @RunWith(MockitoJUnitRunner::class)
-class getProductsByQueryUseCaseTest {
+class GetProductsByQueryUseCaseTest {
 
     @Mock
     private lateinit var productRepository: ProductRepository
