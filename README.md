@@ -30,7 +30,8 @@ Este proyecto contiene las siguientes características.
 
 ### API de Meli
 
-Este proyecto implementa la API : https://api.mercadolibre.com/sites/MLA/
+Este proyecto implementa la API : https://api.mercadolibre.com/sites/MLA/ 
+haciendo uso del endpoint /sites/$SITE_ID/search?q=Motorola%20G6 para obtener ítems de una consulta de búsqueda.
 
 ### Arquitectura
 
