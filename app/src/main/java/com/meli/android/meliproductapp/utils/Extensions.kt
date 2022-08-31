@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.meli.android.meliproductapp.MeliProductApp
+import java.text.DecimalFormat
 
 val Context.app: MeliProductApp
     get() = applicationContext as MeliProductApp
@@ -48,3 +49,9 @@ inline fun <reified T : ViewModel> FragmentActivity.getViewModel(crossinline fac
 
     return ViewModelProvider(this.viewModelStore, viewModelFactory)[T::class.java]
 }
+
+fun setCurrencyFormat(amount: Long): String {
+    val formatter = DecimalFormat("$#,###")
+    return formatter.format(amount)
+}
+

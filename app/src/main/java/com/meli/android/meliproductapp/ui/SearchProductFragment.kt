@@ -1,6 +1,7 @@
 package com.meli.android.meliproductapp.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,16 +36,13 @@ class SearchProductFragment : Fragment() {
                 R.id.action_searchProductFragment_to_productListFragment
             )
         }
-        // listener for our search view.
+        // listener for search view.
         binding?.searchView?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                println("query $query")
-                findNavController().navigate(
-                    R.id.action_searchProductFragment_to_productListFragment,
-                    Bundle().apply {
-                        putString(Constants.EXTRA_QUERY, "$query")
-                    }
-                )
+                Log.d("${Log.INFO}", "query: $query)")
+                query?.let {
+                    searchProduct(query)
+                }
                 return false
             }
 
@@ -52,5 +50,18 @@ class SearchProductFragment : Fragment() {
                 return false
             }
         })
+        // listener for buttonSearch
+        binding?.buttonSearch?.setOnClickListener {
+            searchProduct(binding?.searchView?.query.toString())
+        }
+    }
+
+    private fun searchProduct(query: String) {
+        findNavController().navigate(
+            R.id.action_searchProductFragment_to_productListFragment,
+            Bundle().apply {
+                putString(Constants.EXTRA_QUERY, query)
+            }
+        )
     }
 }

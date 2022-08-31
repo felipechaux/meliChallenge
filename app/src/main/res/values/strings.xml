@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MeliProductApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="title_activity_splash_screen">SplashScreenActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="text_search">Busca en MELI XD</string>
+    <string name="button_text_search">Buscar</string>
+    <string name="text_error_no_data">No hay publicaciones que coincidan \ncon tu búsqueda :(</string>
 </resources>

@@ -10,4 +10,6 @@ object ApiConstants {
     const val KEY_ID = "id"
     const val KEY_TITLE = "title"
     const val KEY_PRICE = "price"
+    const val KEY_IMAGE = "thumbnail"
+
 }

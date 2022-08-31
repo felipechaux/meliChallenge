@@ -42,6 +42,7 @@ dependencies {
     implementation project(":data")
     implementation project(":domain")
     implementation project(":usecases")
+    implementation project(":framework:imagemanager")
     implementation project(":framework:requestmanager")
 
     //Kotlin

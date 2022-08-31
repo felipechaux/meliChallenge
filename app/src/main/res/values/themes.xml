@@ -22,4 +22,20 @@
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="ErrorLabel">
+        <item name="android:textSize">@dimen/size_20</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DetailTitleLabel">
+        <item name="android:textSize">@dimen/size_15</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DetailPriceLabel">
+        <item name="android:textSize">@dimen/size_30</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

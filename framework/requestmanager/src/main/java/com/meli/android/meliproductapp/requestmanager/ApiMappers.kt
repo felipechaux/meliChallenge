@@ -7,7 +7,8 @@ fun ProductResponseServer.toProductDomainList(): List<ProductEntity> = results.m
         ProductEntity(
             id,
             title,
-            price
+            price,
+            image
         )
     }
 }

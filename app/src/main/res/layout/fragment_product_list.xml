@@ -10,8 +10,7 @@
         android:id="@+id/rv_product_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="2"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_product_result" />
 
     <ProgressBar
@@ -25,18 +24,17 @@
 
     <TextView
         android:id="@+id/text_error"
+        style="@style/ErrorLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="no data"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:layout_marginStart="@dimen/dimen_20"
+        android:layout_marginEnd="@dimen/dimen_20"
+        android:text="@string/text_error_no_data"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="gone" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,8 +25,14 @@ class ProductListViewModel(private val getProductsByQueryUseCase: GetProductsByQ
                 _events.value = Event(ProductListNavigation.ShowLoading)
             }
                 .subscribe({ characterList ->
+                    if (characterList.isEmpty()) {
+                        _events.value = Event(ProductListNavigation.HideLoading)
+                        _events.value = Event(ProductListNavigation.ShowEmptyListMessage)
+                        return@subscribe
+                    }
                     _events.value = Event(ProductListNavigation.HideLoading)
-                    _events.value = Event(ProductListNavigation.ShowProductListResult(characterList))
+                    _events.value =
+                        Event(ProductListNavigation.ShowProductListResult(characterList))
                 }, { error ->
                     _events.value = Event(ProductListNavigation.HideLoading)
                     _events.value = Event(ProductListNavigation.ShowProductListError(error))
@@ -41,5 +47,6 @@ class ProductListViewModel(private val getProductsByQueryUseCase: GetProductsByQ
 
         object HideLoading : ProductListNavigation()
         object ShowLoading : ProductListNavigation()
+        object ShowEmptyListMessage : ProductListNavigation()
     }
 }
