@@ -31,4 +31,10 @@ dependencies {
     kapt daggerCompiler
     //RxJava
     implementation rxJavaLib
+
+    //Testing
+    testImplementation coreTestingLib
+    testImplementation jUnitLib
+    testImplementation mockitoLib
+    testImplementation mockitoInlineLib
 }

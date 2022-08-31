@@ -1,0 +1,28 @@
+package com.meli.android.meliproductapp
+
+import io.reactivex.android.plugins.RxAndroidPlugins
+import io.reactivex.plugins.RxJavaPlugins
+import io.reactivex.schedulers.Schedulers
+import org.junit.rules.TestRule
+import org.junit.runner.Description
+import org.junit.runners.model.Statement
+
+class RxSchedulerRule : TestRule {
+    // for handle threads
+    override fun apply(base: Statement, description: Description) =
+        object : Statement() {
+            override fun evaluate() {
+                RxAndroidPlugins.reset()
+                RxAndroidPlugins.setInitMainThreadSchedulerHandler { SCHEDULER_INSTANCE }
+
+                RxJavaPlugins.reset()
+                RxJavaPlugins.setIoSchedulerHandler { SCHEDULER_INSTANCE }
+                RxJavaPlugins.setComputationSchedulerHandler { SCHEDULER_INSTANCE }
+                base.evaluate()
+            }
+        }
+
+    companion object {
+        private val SCHEDULER_INSTANCE = Schedulers.trampoline()
+    }
+}

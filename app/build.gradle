@@ -65,4 +65,10 @@ dependencies {
     implementation constraintLayoutLib
     implementation navigationFragmentLib
     implementation navigationUILib
+
+    // Testing
+    testImplementation coreTestingLib
+    testImplementation jUnitLib
+    testImplementation mockitoLib
+    testImplementation mockitoInlineLib
 }

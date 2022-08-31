@@ -35,7 +35,10 @@ ext{
     daggerVersion = '2.43.2'
     glideVersion = '4.11.0'
     gsonVersion = '2.8.6'
+    coreTestingVersion = '1.1.1'
     jUnitVersion = '4.13'
+    mockitoKotlinInlineVersion = '3.7.0'
+    mockitoKotlinVersion = '2.2.0'
     materialVersion = '1.6.1'
     okHttpLoggingInterceptorVersion = '4.7.2'
     lifecycleVersion = '2.2.0'
@@ -45,6 +48,9 @@ ext{
     rxJavaVersion = '2.2.19'
     coreKTXVersion = '1.7.0'
     navigationVersion = '2.5.1'
+
+    //Core Testing
+    coreTestingLib = "android.arch.core:core-testing:$coreTestingVersion"
 
     //Dagger
     daggerCompiler = "com.google.dagger:dagger-compiler:$daggerVersion"
@@ -59,6 +65,10 @@ ext{
 
     //JUnit
     jUnitLib = "junit:junit:$jUnitVersion"
+
+    //Mockito
+    mockitoLib = "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion"
+    mockitoInlineLib = "org.mockito:mockito-inline:$mockitoKotlinInlineVersion"
 
     //Kotlin
     kotlinLib = "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
