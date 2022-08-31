@@ -68,6 +68,7 @@ class ProductListViewModelTest {
 val mockedProduct = ProductEntity(
     "",
     "",
-    0,
-    ""
+    0.0,
+    "",
+    listOf()
 )

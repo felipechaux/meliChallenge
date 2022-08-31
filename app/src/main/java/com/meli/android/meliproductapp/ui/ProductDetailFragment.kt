@@ -40,15 +40,19 @@ class ProductDetailFragment : Fragment() {
     }
 
     private fun loadProductDetail(productEntity: ProductEntity) {
-        Log.d("${Log.INFO}", "detail: ${productEntity.title})")
-        binding?.imageDetail?.bindImageUrl(
-            url = productEntity.image,
-            placeholder = R.drawable.ic_camera_alt_black,
-            errorPlaceholder = R.drawable.ic_broken_image_black
-        )
-        binding?.titleDetail?.text = productEntity.title
-        binding?.priceDetail?.text = setCurrencyFormat(productEntity.price.toLong())
-        loadProductAttributes(productEntity.attributes)
+        try {
+            Log.d("${Log.INFO}", "detail: ${productEntity.title})")
+            binding?.imageDetail?.bindImageUrl(
+                url = productEntity.image,
+                placeholder = R.drawable.ic_camera_alt_black,
+                errorPlaceholder = R.drawable.ic_broken_image_black
+            )
+            binding?.titleDetail?.text = productEntity.title
+            binding?.priceDetail?.text = setCurrencyFormat(productEntity.price.toLong())
+            loadProductAttributes(productEntity.attributes)
+        } catch (e: Error) {
+            e.printStackTrace()
+        }
     }
 
     private fun loadProductAttributes(attributes: List<AttributesEntity>?) {

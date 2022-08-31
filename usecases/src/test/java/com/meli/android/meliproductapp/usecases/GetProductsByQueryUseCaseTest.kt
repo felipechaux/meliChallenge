@@ -50,6 +50,7 @@ class GetProductsByQueryUseCaseTest {
 val mockedProduct = ProductEntity(
     "",
     "",
-    0,
-    ""
+    0.0,
+    "",
+    listOf()
 )

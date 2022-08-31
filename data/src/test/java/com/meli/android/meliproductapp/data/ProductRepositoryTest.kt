@@ -45,6 +45,7 @@ class ProductRepositoryTest {
 val mockedProduct = ProductEntity(
     "",
     "",
-    0,
-    ""
+    0.0,
+    "",
+    listOf()
 )

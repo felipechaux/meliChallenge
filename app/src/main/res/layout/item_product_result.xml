@@ -4,12 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="product"
             type="com.meli.android.meliproductapp.domain.ProductEntity" />
 
         <variable
             name="currencyPrice"
+            type="String" />
+
+        <variable
+            name="condition"
             type="String" />
     </data>
 
@@ -44,7 +49,7 @@
                 android:id="@+id/product_title"
                 style="@style/ProductListItemTitle"
                 android:layout_marginStart="@dimen/margin_10"
-                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_15"
                 android:layout_marginEnd="@dimen/margin_10"
                 android:text="@{product.title}"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -53,15 +58,25 @@
                 tools:text="@string/text_dummy_title" />
 
             <TextView
+                android:id="@+id/product_condition"
+                style="@style/ProductListItemTitle"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:text="@{condition}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/product_image"
+                app:layout_constraintTop_toBottomOf="@+id/product_title"
+                tools:text="@string/text_dummy_condition" />
+
+            <TextView
                 android:id="@+id/product_price"
                 style="@style/ProductListItemTitle"
                 android:layout_marginStart="@dimen/margin_10"
                 android:layout_marginEnd="@dimen/margin_10"
                 android:text="@{currencyPrice}"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/product_image"
-                app:layout_constraintTop_toBottomOf="@+id/product_title"
+                app:layout_constraintTop_toBottomOf="@+id/product_condition"
                 tools:text="@string/text_dummy_price" />
 
 

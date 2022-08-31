@@ -6,6 +6,7 @@ import com.meli.android.meliproductapp.R
 import com.meli.android.meliproductapp.databinding.ItemProductResultBinding
 import com.meli.android.meliproductapp.domain.ProductEntity
 import com.meli.android.meliproductapp.imagemanager.bindImageUrl
+import com.meli.android.meliproductapp.utils.Constants
 import com.meli.android.meliproductapp.utils.bindingInflate
 import com.meli.android.meliproductapp.utils.setCurrencyFormat
 import kotlinx.android.synthetic.main.item_product_result.view.product_image
@@ -37,6 +38,8 @@ class ProductResultAdapter(
         fun bind(item: ProductEntity) {
             dataBinding.product = item
             dataBinding.currencyPrice = item.price.let { setCurrencyFormat(it.toLong()) }
+            val itemCondition = item.attributes?.filter { it.id == Constants.ITEM_CONDITION }
+            dataBinding.condition = itemCondition?.firstOrNull()?.valueName
             itemView.product_image.bindImageUrl(
                 url = item.image,
                 placeholder = R.drawable.ic_camera_alt_black,
