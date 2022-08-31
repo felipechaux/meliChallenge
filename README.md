@@ -64,4 +64,4 @@ Dagger
 
 ### Animaciones
 
-Animaciones Lottie
+Animaciones con Lottie
