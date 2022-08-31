@@ -61,3 +61,7 @@ Glide
 ### Inyección de dependencia - Dagger
 
 Dagger
+
+### Animaciones
+
+Animaciones Lottie
