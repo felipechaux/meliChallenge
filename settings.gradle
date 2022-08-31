@@ -1,0 +1,6 @@
+rootProject.name = "MeliProductApp"
+include ':app'
+include ':domain'
+include ':framework:requestmanager'
+include ':data'
+include ':usecases'
