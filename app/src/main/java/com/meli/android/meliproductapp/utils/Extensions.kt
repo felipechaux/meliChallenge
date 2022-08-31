@@ -31,7 +31,6 @@ fun <T : ViewDataBinding> ViewGroup.bindingInflate(
     attachToRoot: Boolean = true
 ): T = DataBindingUtil.inflate(LayoutInflater.from(context), layoutRes, this, attachToRoot)
 
-
 @Suppress("UNCHECKED_CAST")
 inline fun <reified T : ViewModel> Fragment.getViewModel(crossinline factory: () -> T): T {
     val viewModelFactory: ViewModelProvider.Factory = object : ViewModelProvider.Factory {
@@ -54,4 +53,3 @@ fun setCurrencyFormat(amount: Long): String {
     val formatter = DecimalFormat("$#,###")
     return formatter.format(amount)
 }
-

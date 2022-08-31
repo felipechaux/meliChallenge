@@ -36,7 +36,7 @@ class ProductResultAdapter(
 
         fun bind(item: ProductEntity) {
             dataBinding.product = item
-            dataBinding.currencyPrice = item.price?.let { setCurrencyFormat(it) }
+            dataBinding.currencyPrice = item.price.let { setCurrencyFormat(it.toLong()) }
             itemView.product_image.bindImageUrl(
                 url = item.image,
                 placeholder = R.drawable.ic_camera_alt_black,

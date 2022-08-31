@@ -6,63 +6,148 @@
     android:layout_height="match_parent"
     tools:context=".ui.ProductDetailFragment">
 
-    <androidx.cardview.widget.CardView
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_10"
-        android:layout_marginTop="@dimen/margin_20"
-        android:layout_marginEnd="@dimen/margin_10"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:cardCornerRadius="10dp"
-        tools:cardElevation="5dp"
-        tools:cardUseCompatPadding="true">
+        android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_250">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_marginEnd="@dimen/margin_10"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:cardCornerRadius="10dp"
+            tools:cardElevation="5dp"
+            tools:cardUseCompatPadding="true">
 
-            <TextView
-                android:id="@+id/title_detail"
-                style="@style/DetailTitleLabel"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_10"
-                android:layout_marginTop="@dimen/margin_20"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Ford Eco" />
+                android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/image_detail"
-                android:layout_width="@dimen/dimen_128"
-                android:layout_height="@dimen/dimen_128"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/margin_10"
-                android:contentDescription="@string/app_name"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/title_detail"
-                tools:src="@drawable/ic_camera_alt_black" />
+                <TextView
+                    android:id="@+id/title_detail"
+                    style="@style/DetailTitleLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:layout_marginTop="@dimen/margin_20"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/text_dummy_title" />
 
-            <TextView
-                android:id="@+id/price_detail"
-                style="@style/DetailPriceLabel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_10"
-                android:layout_marginEnd="@dimen/margin_10"
-                android:layout_marginBottom="@dimen/margin_10"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_detail"
-                tools:text="$ 40.000000 " />
+                <TextView
+                    android:id="@+id/condition_detail"
+                    style="@style/DetailTitleLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title_detail"
+                    tools:text="@string/text_dummy_condition" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:id="@+id/image_detail"
+                    android:layout_width="@dimen/dimen_128"
+                    android:layout_height="@dimen/dimen_128"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/condition_detail"
+                    tools:src="@drawable/ic_camera_alt_black" />
+
+                <TextView
+                    android:id="@+id/price_detail"
+                    style="@style/DetailPriceLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:layout_marginBottom="@dimen/margin_10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/image_detail"
+                    tools:text="@string/text_dummy_price" />
+
+                <TextView
+                    android:id="@+id/detail_features"
+                    style="@style/DetailGeneralLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:text="@string/text_general_features"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/price_detail"
+                    tools:text="@string/text_general_features" />
+
+                <TextView
+                    android:id="@+id/detail_one"
+                    style="@style/DetailItemLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:layout_marginBottom="@dimen/margin_10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/detail_features"
+                    tools:text="@string/text_dummy_item_Detail" />
+
+                <TextView
+                    android:id="@+id/detail_two"
+                    style="@style/DetailItemLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:layout_marginBottom="@dimen/margin_10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/detail_one"
+                    tools:text="@string/text_dummy_item_Detail" />
+
+                <TextView
+                    android:id="@+id/detail_three"
+                    style="@style/DetailItemLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:layout_marginBottom="@dimen/margin_10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/detail_two"
+                    tools:text="@string/text_dummy_item_Detail" />
+
+                <TextView
+                    android:id="@+id/detail_four"
+                    style="@style/DetailItemLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:layout_marginBottom="@dimen/margin_40"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/detail_three"
+                    tools:text="@string/text_dummy_item_Detail" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.core.widget.NestedScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

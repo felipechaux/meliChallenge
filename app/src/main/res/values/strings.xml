@@ -4,4 +4,9 @@
     <string name="text_search">Busca en MELI XD</string>
     <string name="button_text_search">Buscar</string>
     <string name="text_error_no_data">No hay publicaciones que coincidan \ncon tu búsqueda :(</string>
+    <string name="text_general_features">Características principales :</string>
+    <string name="text_dummy_price">$10.000</string>
+    <string name="text_dummy_title">Iphone 11 pro Max</string>
+    <string name="text_dummy_condition">Nuevo</string>
+    <string name="text_dummy_item_Detail">detalle</string>
 </resources>

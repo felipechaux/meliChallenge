@@ -38,4 +38,14 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="DetailGeneralLabel">
+        <item name="android:textSize">@dimen/size_30</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="DetailItemLabel">
+        <item name="android:textSize">@dimen/size_20</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
 </resources>

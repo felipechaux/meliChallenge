@@ -6,11 +6,6 @@
     app:startDestination="@id/searchProductFragment">
 
     <fragment
-        android:id="@+id/productDetailFragment"
-        android:name="com.meli.android.meliproductapp.ui.ProductDetailFragment"
-        android:label="fragment_product_detail"
-        tools:layout="@layout/fragment_product_detail" />
-    <fragment
         android:id="@+id/searchProductFragment"
         android:name="com.meli.android.meliproductapp.ui.SearchProductFragment"
         tools:layout="@layout/fragment_search_product">
@@ -28,18 +23,20 @@
     </fragment>
     <fragment
         android:id="@+id/productListFragment"
-        android:name="com.meli.android.meliproductapp.ui.ProductListFragment"
-        android:label="ProductListFragment">
+        android:name="com.meli.android.meliproductapp.ui.ProductListFragment">
         <action
             android:id="@+id/action_productListFragment_to_productDetailFragment"
             app:destination="@id/productDetailFragment"
             app:enterAnim="@android:anim/slide_out_right"
-            app:exitAnim="@android:anim/slide_out_right"
-            >
+            app:exitAnim="@android:anim/slide_out_right">
             <argument
                 android:name="EXTRA_PRODUCT_DETAIL"
                 app:argType="com.meli.android.meliproductapp.parcelable.ProductParcelable"
                 app:nullable="false" />
         </action>
     </fragment>
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.meli.android.meliproductapp.ui.ProductDetailFragment"
+        tools:layout="@layout/fragment_product_detail" />
 </navigation>
