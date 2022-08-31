@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="product"
             type="com.meli.android.meliproductapp.domain.ProductEntity" />
@@ -51,7 +50,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/product_image"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Mazda " />
+                tools:text="@string/text_dummy_title" />
 
             <TextView
                 android:id="@+id/product_price"
@@ -63,7 +62,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/product_image"
                 app:layout_constraintTop_toBottomOf="@+id/product_title"
-                tools:text="price" />
+                tools:text="@string/text_dummy_price" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
