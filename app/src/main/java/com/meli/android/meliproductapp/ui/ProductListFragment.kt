@@ -20,6 +20,7 @@ import com.meli.android.meliproductapp.presentation.ProductListViewModel
 import com.meli.android.meliproductapp.utils.Constants
 import com.meli.android.meliproductapp.utils.app
 import com.meli.android.meliproductapp.utils.getViewModel
+import com.meli.android.meliproductapp.utils.isNetworkAvailable
 import com.meli.android.meliproductapp.utils.showLongToast
 
 class ProductListFragment : Fragment() {
@@ -52,8 +53,14 @@ class ProductListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val query = requireArguments().getString(Constants.EXTRA_QUERY)
         initObservers()
-        query?.let {
-            productListViewModel.getProductsByQuery(it)
+        query?.let { query ->
+            context?.isNetworkAvailable()?.let {
+                if (it) {
+                    productListViewModel.getProductsByQuery(query)
+                } else {
+                    context?.showLongToast(getString(R.string.text_not_internet))
+                }
+            }
         }
     }
 
@@ -78,7 +85,7 @@ class ProductListFragment : Fragment() {
                             binding?.textError?.visibility = View.VISIBLE
                         }
                         is ProductListViewModel.ProductListNavigation.ShowProductListError -> {
-                            context?.showLongToast(R.string.text_error_user.toString())
+                            context?.showLongToast(getString(R.string.text_error_user))
                         }
                     }
                 }
